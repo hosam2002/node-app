@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <%- include('./Components/head.ejs') %>
+
+    <body>
+        
+        <header class="header">
+
+            <nav class="header__nav">
+
+                <ul class="header__list">
+
+                    <li> <a href="/" class="header__links"> Home </a> </li>
+                    <li> <a href="#footer" class="header__links"> About </a> </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header__navbar navbar">
+                
+                
+                <input class="navbar__checkbox" type="checkbox" name="nav" id="nav">
+                <label class="navbar__button" for="nav"> <span class="navbar__icon"></span> </label>
+
+                <div class="navbar__menu" id="menu"> 
+                    
+                    <ul class="navbar__list">
+
+                        <li class="navbar__item"> <a href="/"> Home </a> </li>
+                        <li class="navbar__item"> <a href="#footer"> About </a> </li>
+                        
+                    </ul>
+                    
+                </div>
+
+            </div>
+
+            <div class="header__search search">
+
+                <form action="/products/query" method="get" class="search__form">
+
+                    <input class="search__input" type="search" name="product" id="product" placeholder="Search">
+
+                </form>              
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="query">
+
+                <form action="/products/query" method="get" class="query__form">
+
+                    <input class="query__input" type="search" name="product" id="product" placeholder="Search">
+
+                </form> 
+
+            </div>
+
+            <div class="heading">
+
+                <div class="heading__title">
+
+                    Here is your list
+
+                </div>
+
+            </div>
+            
+            <% for (let i = 0; i < limit; i++) { %>
+
+                <div class="article article-<%= i%>">
+
+                    <div class="article__header"> <%= product[i].name %> </div>
+    
+                    <div class="article__description justify-600"> 
+
+                        <%= product[i].desc %>
+                            
+                    </div>
+    
+                    <div class="article__footer">
+
+                        By <%= product[i].brand %>
+                    
+                    </div>
+    
+                </div>
+
+            <% } %>
+
+        </main>
+
+        <!-- Home Page and About Page -->
+
+        <footer id="footer">
+
+            <span> Copyrights Hosam Umbaddi 2023, All Rights Recieved. </span>
+
+        </footer>
+        
+    </body>
+
+</html>

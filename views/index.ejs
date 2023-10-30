@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <%- include('./Components/head.ejs') %>
+
+    <body>
+        
+        <header class="header">
+
+            <nav class="header__nav">
+
+                <ul class="header__list">
+
+                    <li> <a href="/" class="header__links"> Home </a> </li>
+                    <li> <a href="/products" class="header__links"> Products </a> </li>
+                    <li> <a href="#footer" class="header__links"> About </a> </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="header__navbar navbar">
+                
+                
+                <input class="navbar__checkbox" type="checkbox" name="nav" id="nav">
+                <label class="navbar__button" for="nav"> <span class="navbar__icon"></span> </label>
+
+                <div class="navbar__menu" id="menu"> 
+                    
+                    <ul class="navbar__list">
+
+                        <li class="navbar__item"> <a href="/"> Home </a> </li>
+                        <li class="navbar__item"> <a href="/products"> Products </a> </li>
+                        <li class="navbar__item"> <a href="#footer"> About </a> </li>
+                        
+                    </ul>
+                    
+                </div>
+
+            </div>
+
+            <div class="header__search search">
+
+                <form action="/products/query" method="get" class="search__form">
+
+                    <input class="search__input" type="search" name="product" id="product" placeholder="Search">
+
+                </form>              
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div class="description">
+
+                <div class="description__title"> SudaPhone </div>
+                <div class="description__content justify-600">
+
+                    Developed for purpose of practicing, it's not a real world website, it simulate a Get Requests for
+                    getting informations about specific Smart Phone, developed using JavaScript, Node Js and Express Js for Server side,
+                    Pure CSS as Frontend side, Search your smart phone now.
+
+                </div>
+
+            </div>
+
+            <div class="query">
+
+                <form action="/products/query" method="get" class="query__form">
+
+                    <input class="query__input" type="search" name="product" id="product" placeholder="Search">
+
+                </form> 
+
+            </div>
+
+        </main>
+
+        <footer id="footer">
+
+            <span> Copyrights Hosam Umbaddi 2023, All Rights Recieved. </span>
+
+        </footer>
+        
+    </body>
+
+</html>
